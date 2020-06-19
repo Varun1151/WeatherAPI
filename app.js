@@ -29,17 +29,17 @@ app.get("/",(req,res)=>{
 app.post("/",(req,res)=>{
 	query = req.body.cityName;
 	mode=req.body.tempunit;
-	if(mode=="Celcius"){
-		unit="metric";
-		unitname="degree celcius";
+	if(mode=="Kelvin"){
+		unit="kelvin";
+		unitname="kelvin";
 	}
 	else if(mode=="Fahrenheit"){
 		unit="imperial";
 		unitname="degree fahrenheit";
 	}
 	else{
-		unit="kelvin";
-		unitname="kelvin";
+		unit="metric";
+		unitname="degree celcius";
 	}
 	const url = "https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid="+apikey+"&units="+unit;
 	
